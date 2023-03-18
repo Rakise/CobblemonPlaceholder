@@ -1,6 +1,4 @@
-
-
-package ca.skynetcloud.cobblemonplaceholder.impl.trainer;
+package ca.skynetcloud.cobblemonplaceholder.impl.global;
 
 
 import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
@@ -9,17 +7,17 @@ import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
 import org.bukkit.entity.Player;
 
-public class SpeciesCountParser implements Parser
+public class SpeciesTotalCountParser implements Parser
 {
     @Override
     public String getID() {
-        return "species_count";
+        return "species_total_count";
     }
     
     @Override
     public void register() {
         for (int i = 1; i <= 6; ++i) {
-            CobblemonExpansion.registerParser(new SpeciesCountParser());
+            CobblemonExpansion.registerParser(new SpeciesTotalCountParser());
         }
     }
 

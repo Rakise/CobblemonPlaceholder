@@ -5,7 +5,7 @@ plugins {
 
 
 group = 'ca.skynetcloud'
-version = '0.0.5'
+version = '0.0.6'
 
 java {
     archivesBaseName = 'cobblemonplaceholder'
@@ -47,14 +47,22 @@ repositories {
 
     jcenter()
 
+    maven {
+        name = 'Kotlin for Forge'
+        url = 'https://thedarkcolour.github.io/KotlinForForge/'
+    }
+
 }
 
 dependencies {
 
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.4'
-    compileOnly 'curse.maven:cobblemon-687131:4284573'
+    compileOnly 'curse.maven:cobblemon-687131:4443261'
     compileOnly 'me.clip:placeholderapi:2.11.2'
     compileOnly 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT'
+
+    // Adds KFF as dependency and Kotlin libs
+    implementation 'thedarkcolour:kotlinforforge:3.10.0'
 
 }
 
@@ -94,7 +102,7 @@ githubRelease {
     releaseAssets.from('build/libs')
 
     FilenameFilter filter = { dir, filename -> filename.contains(project.version) }
-    releaseAssets = jar.project.listFiles filter
+    releaseAssets = jar.destinationDir.listFiles filter
     allowUploadToExisting.set false // Setting this to true will allow this plugin to upload artifacts to a release if it found an existing one. If overwrite is set to true, this option is ignored.
     overwrite false // by default false; if set to true, will delete an existing release with the same tag and name
     dryRun false // by default false; you can use this to see what actions would be taken without making a release

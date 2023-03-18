@@ -4,6 +4,7 @@ package ca.skynetcloud.cobblemonplaceholder.impl.party;
 
 import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
 import ca.skynetcloud.cobblemonplaceholder.impl.PartyParser;
+import ca.skynetcloud.cobblemonplaceholder.util.text.Text;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import org.bukkit.entity.Player;
 
@@ -31,6 +32,6 @@ public class NicknameParser extends PartyParser
     
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
-        return pokemon.getSpecies().getName().trim();
+        return Text.capitalize(pokemon.getSpecies().getName().trim());
     }
 }

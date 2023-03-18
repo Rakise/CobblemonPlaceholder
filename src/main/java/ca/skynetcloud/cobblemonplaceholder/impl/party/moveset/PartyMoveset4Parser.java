@@ -2,6 +2,7 @@ package ca.skynetcloud.cobblemonplaceholder.impl.party.moveset;
 
 import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
 import ca.skynetcloud.cobblemonplaceholder.impl.PartyParser;
+import ca.skynetcloud.cobblemonplaceholder.util.text.Text;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import org.bukkit.entity.Player;
 
@@ -31,7 +32,7 @@ public class PartyMoveset4Parser extends PartyParser {
 
     @Override
     public Object parse(Player p0, Pokemon pokemon, String[] p2) {
-        return Objects.requireNonNull(pokemon.getMoveSet().get(3)).getName().trim();
+        return Text.capitalize(Objects.requireNonNull(pokemon.getMoveSet().get(3)).getName().trim());
 
     }
 }

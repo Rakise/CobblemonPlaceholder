@@ -1,9 +1,11 @@
 # CobblemonPlaceholder
 A simple utility to link your PAPI with Cobblemon!
 
-## Base Placeholder
+## Global Placeholder
 
 ```%cobblemon_version``` - return Cobblemon Mod Verison
+
+
 
 ## Party Placeholders
 
@@ -46,5 +48,9 @@ A simple utility to link your PAPI with Cobblemon!
 ```%cobblemon_party_slot_iv_stat%``` - returns the IV value from 0 to 31"
 
 ```%cobblemon_party_slot_ev_stat%``` - returns the EV value from 0 to 252"
+
+
+
+
 
 

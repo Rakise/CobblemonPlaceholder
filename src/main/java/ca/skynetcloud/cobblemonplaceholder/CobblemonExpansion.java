@@ -2,6 +2,7 @@ package ca.skynetcloud.cobblemonplaceholder;
 
 import ca.skynetcloud.cobblemonplaceholder.api.Parser;
 import ca.skynetcloud.cobblemonplaceholder.impl.global.CobblemonVersionParser;
+import ca.skynetcloud.cobblemonplaceholder.impl.global.SpeciesTotalCountParser;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.*;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.evs.*;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.ivs.*;
@@ -9,7 +10,7 @@ import ca.skynetcloud.cobblemonplaceholder.impl.party.moveset.PartyMoveset1Parse
 import ca.skynetcloud.cobblemonplaceholder.impl.party.moveset.PartyMoveset2Parser;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.moveset.PartyMoveset3Parser;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.moveset.PartyMoveset4Parser;
-import ca.skynetcloud.cobblemonplaceholder.impl.trainer.SpeciesCountParser;
+import ca.skynetcloud.cobblemonplaceholder.impl.global.SpeciesImplTotalCountParser;
 import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
 import com.google.common.collect.Sets;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
@@ -41,7 +42,7 @@ public class CobblemonExpansion extends PlaceholderExpansion {
     }
 
     public @NotNull String getVersion() {
-        return "1.0.0";
+        return "0.0.6";
     }
 
     public boolean register() {
@@ -95,8 +96,8 @@ public class CobblemonExpansion extends PlaceholderExpansion {
                 new ShinyParser(),
                 new UltraBeastsParser(),
                 new CobblemonVersionParser(),
-                new SpeciesCountParser(),
-
+                new SpeciesImplTotalCountParser(),
+                new SpeciesTotalCountParser(),
 
                 new DexNumberParser(),
                 new AbilityParser(),
@@ -116,7 +117,6 @@ public class CobblemonExpansion extends PlaceholderExpansion {
                 new PartyEvSPAttackParser(),
                 new PartyEvSPDefenceParser(),
                 new PartyEvSpeedParser(),
-
 
 
                 new GenderParser(),

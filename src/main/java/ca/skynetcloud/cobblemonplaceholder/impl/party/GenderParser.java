@@ -1,5 +1,3 @@
-
-
 package ca.skynetcloud.cobblemonplaceholder.impl.party;
 
 import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
