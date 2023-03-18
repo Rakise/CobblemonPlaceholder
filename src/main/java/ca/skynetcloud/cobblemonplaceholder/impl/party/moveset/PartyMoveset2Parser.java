@@ -31,7 +31,7 @@ public class PartyMoveset2Parser extends PartyParser {
 
     @Override
     public Object parse(Player p0, Pokemon pokemon, String[] p2) {
-        return Text.capitalize(Objects.requireNonNull(pokemon.getMoveSet().get(1)).getName().trim());
+        return Text.capitalize(Objects.requireNonNull(pokemon.getMoveSet().get(1)).getName());
 
     }
 }
