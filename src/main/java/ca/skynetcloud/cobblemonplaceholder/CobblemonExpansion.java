@@ -22,8 +22,14 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class CobblemonExpansion extends PlaceholderExpansion {
+
+    private final Cobblemonplaceholder plugin;
     private static final Set<Parser> defaultParsers;
     private static final HashMap<String, Parser> parsers;
+
+    public CobblemonExpansion(Cobblemonplaceholder plugin) {
+        this.plugin = plugin;
+    }
 
     public static void registerParser(final Parser parser) {
         CobblemonExpansion.parsers.put(parser.getID(), parser);
@@ -43,6 +49,11 @@ public class CobblemonExpansion extends PlaceholderExpansion {
 
     public @NotNull String getVersion() {
         return "0.0.6";
+    }
+
+    @Override
+    public boolean persist() {
+        return true; // This is required or else PlaceholderAPI will unregister the Expansion on reload
     }
 
     public boolean register() {
@@ -79,6 +90,7 @@ public class CobblemonExpansion extends PlaceholderExpansion {
         defaultParsers = Sets.newHashSet(
 
                 new BaseFriendshipParser(),
+                new LowerCaseNicknameParser(),
                 new EggGroupParser(),
                 new HiddenAbilityParser(),
                 new PartyMoveset4Parser(),

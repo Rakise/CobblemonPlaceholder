@@ -6,15 +6,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class Cobblemonplaceholder extends JavaPlugin {
+
+    @Override
     public void onEnable() {
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") == null) {
             System.out.println("PlaceholderAPI not found, disabling CobblemonPlaceholder.");
             this.getServer().getPluginManager().disablePlugin((Plugin)this);
         }
         else {
-            new CobblemonExpansion().register();
+            new CobblemonExpansion(this).register();
         }
     }
-
 
 }

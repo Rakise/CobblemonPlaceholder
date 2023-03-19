@@ -31,6 +31,9 @@ public class PartyMoveset3Parser extends PartyParser {
 
     @Override
     public Object parse(Player p0, Pokemon pokemon, String[] p2) {
+        if (pokemon.getMoveSet().get(3) == null){
+            return "N/A";
+        }
         return Text.capitalize(Objects.requireNonNull(pokemon.getMoveSet().get(2)).getName());
     }
 }

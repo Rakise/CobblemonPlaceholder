@@ -26,12 +26,16 @@ public class PartyMoveset4Parser extends PartyParser {
     @Override
     public void register() {
         for (int i = 1; i <= 6; ++i) {
+
             CobblemonExpansion.registerParser(new PartyMoveset4Parser(i));
         }
     }
 
     @Override
     public Object parse(Player p0, Pokemon pokemon, String[] p2) {
+        if (pokemon.getMoveSet().get(3) == null){
+            return "N/A";
+        }
         return Text.capitalize(Objects.requireNonNull(pokemon.getMoveSet().get(3)).getName());
 
     }
