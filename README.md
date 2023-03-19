@@ -5,7 +5,9 @@ A simple utility to link your PAPI with Cobblemon!
 
 ```%cobblemon_version``` - return Cobblemon Mod Verison
 
+```%cobblemon_impl_species_total_count%``` - Total Impl Species Count
 
+```%cobblemon_species_total_count%``` Total Species Count
 
 ## Party Placeholders
 
