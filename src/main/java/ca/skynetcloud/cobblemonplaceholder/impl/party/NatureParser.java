@@ -6,6 +6,8 @@ import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
 import ca.skynetcloud.cobblemonplaceholder.impl.PartyParser;
 import ca.skynetcloud.cobblemonplaceholder.util.text.Text;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.util.LocalizationUtilsKt;
+import net.minecraft.network.chat.Component;
 import org.bukkit.entity.Player;
 
 public class NatureParser extends PartyParser
@@ -37,6 +39,6 @@ public class NatureParser extends PartyParser
     
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
-        return Text.capitalize(pokemon.getNature().getName().getPath());
+        return Text.capitalizeWord(pokemon.getNature().getName().getPath().replace("_", " "));
     }
 }

@@ -5,11 +5,18 @@ import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
 import ca.skynetcloud.cobblemonplaceholder.impl.PartyParser;
 import ca.skynetcloud.cobblemonplaceholder.util.text.Text;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.util.LocalizationUtilsKt;
+import kotlin.jvm.internal.Intrinsics;
+import net.minecraft.network.chat.MutableComponent;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
 public class PartyMoveset1Parser extends PartyParser {
+
+
+    private String name;
 
     public PartyMoveset1Parser() {
         super(0);
@@ -32,9 +39,7 @@ public class PartyMoveset1Parser extends PartyParser {
 
     @Override
     public Object parse(Player p0, Pokemon pokemon, String[] p2) {
-        if (pokemon.getMoveSet().get(0) == null){
-            return "N/A";
-        }
-        return Text.capitalize(Objects.requireNonNull(pokemon.getMoveSet().get(0)).getName());
+        return pokemon.getMoveSet().getMoves().size() >= 1 ? pokemon.getMoveSet().get(0).getDisplayName().getString() : "Empty";
+
     }
 }

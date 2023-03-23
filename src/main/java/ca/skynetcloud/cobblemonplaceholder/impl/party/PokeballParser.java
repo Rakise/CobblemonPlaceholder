@@ -31,6 +31,6 @@ public class PokeballParser extends PartyParser
 
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
-        return Text.capitalize(pokemon.getCaughtBall().getName().getPath());
+        return Text.capitalizeWord(pokemon.getCaughtBall().getName().getPath().replace("_", " "));
     }
 }
