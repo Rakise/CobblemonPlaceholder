@@ -90,6 +90,8 @@ public class CobblemonExpansion extends PlaceholderExpansion {
         defaultParsers = Sets.newHashSet(
 
                 new BaseFriendshipParser(),
+                new PokeSpriteParser(),
+                new BallSpriteParser(),
                 new LowerCaseNicknameParser(),
                 new EggGroupParser(),
                 new HiddenAbilityParser(),

@@ -1,5 +1,4 @@
-# Version 0.0.8
+# Version 0.0.9
   # Sky:
-   - Fixed Moveset naming .
-   - Fixed Ability naming. 
-   - Fixed Nature Naming.
+   - Added none localized name placeholder for both balls(%cobblemon_party_slot_ball%) and pokemon(%cobblemon_party_slot_sprite%) 
+
