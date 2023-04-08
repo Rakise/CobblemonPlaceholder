@@ -114,7 +114,6 @@ public class CobblemonExpansion extends PlaceholderExpansion {
                 new SpeciesTotalCountParser(),
 
                 new DexNumberParser(),
-                new PokemonParser(),
                 new AbilityParser(),
                 new ExperienceParser(),
 

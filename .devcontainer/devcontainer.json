@@ -7,14 +7,13 @@
 
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"version": "none",
-			"installMaven": "false",
-			"installGradle": "false"
+			"version": "17",
+			"jdkDistro": "ms"
 		},
 		"ghcr.io/devcontainers-contrib/features/gradle-sdkman:2": {
 			"version": "7.5.1",
-			"jdkVersion": "none",
-			"jdkDistro": "open"
+			"jdkVersion": "17",
+			"jdkDistro": "ms"
 		}
 	}
 
