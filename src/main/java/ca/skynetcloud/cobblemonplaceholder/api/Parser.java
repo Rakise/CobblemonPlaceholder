@@ -20,5 +20,10 @@ public interface  Parser {
             return Cobblemon.INSTANCE.getStorage().getParty(player.getUniqueId()).get(slot - 1);
 
     }
+public class CobblemonGetPokemon implements Parser {
+    @Override
+    public String getPoke(final Player player, int slot) throws NoPokemonStoreException {
+        return Cobblemon.INSTANCE.getStorage().getParty(player.getUniqueId()).get(slot - 1);
+    }
 
 }
