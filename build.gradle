@@ -21,7 +21,6 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-
     maven {
         url "https://cursemaven.com"
         content {
@@ -52,7 +51,6 @@ repositories {
         name = 'Kotlin for Forge'
         url = 'https://thedarkcolour.github.io/KotlinForForge/'
     }
-
 }
 
 dependencies {
