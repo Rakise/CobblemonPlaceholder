@@ -1,31 +1,36 @@
-
 package ca.skynetcloud.cobblemonplaceholder.impl.PokemonGet;
 
-import ca.skynetcloud.cobblemonplaceholder.api.Parser;
+import com.cobblemon.mod.common.Cobblemon;
+import org.bukkit.Bukkit;
+import com.cobblemon.mod.common.api.pokemon.evolution.PreEvolution;
+import com.cobblemon.mod.common.pokemon.evolution.CobblemonLazyPreEvolution;
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
+import com.cobblemon.mod.common.pokemon.FormData;
+import com.cobblemon.mod.common.command.argument.PokemonPropertiesArgumentType;
+import com.cobblemon.mod.common.pokemon.Species;
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
 import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import net.minecraft.server.level.ServerPlayer;
-import ca.skynetcloud.cobblemonplaceholder.impl.PartyParser;
-import ca.skynetcloud.cobblemonplaceholder.util.text.Text;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import org.bukkit.entity.Player;
 
-public class PokemonGet implements Parser {
+import java.util.UUID;
 
-    @Override
-    public Pokemon parse(final Player player, final String[] args) throws NoPokemonStoreException {
-        int slot = Integer.parseInt(args[0]);
-        return getPokemon(player, slot);
+public class PokemonGet {
+
+    public static Species getPreEvo(Pokemon pokemon) {
+        return pokemon.getPreEvolution().getSpecies();
     }
 
-    @Override
-    public void register() {
-        // Do nothing (empty implementation)
+    public static Pokemon pickPokemon(final Player player, int slot) throws NoPokemonStoreException {
+        return Cobblemon.INSTANCE.getStorage().getParty(player.getUniqueId()).get(slot - 1);
     }
 
-    @Override
-    public String getID() {
-        return null; // or return some default value
+    public static Pokemon givePokemon(final Player player, Pokemon pokemon) throws NoPokemonStoreException {
+        PlayerPartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUniqueId());
+        party.add(pokemon);
+        return pokemon;
     }
 }
