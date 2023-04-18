@@ -8,7 +8,7 @@ public class VictoryEvent extends Event {
 
     private final List<BattleActor> winners;
 
-    public BattleVictoryEvent(List<BattleActor> winners) {
+    public VictoryEvent(List<BattleActor> winners) {
         this.winners = winners;
     }
 
