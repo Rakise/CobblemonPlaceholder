@@ -4,7 +4,7 @@ import ca.skynetcloud.cobblemonplaceholder.Cobblemonplaceholder;
 import org.bukkit.event.Event;
 import java.util.List;
 
-public class BattleVictoryEvent extends Event {
+public class VictoryEvent extends Event {
 
     private final List<BattleActor> winners;
 
