@@ -28,6 +28,7 @@ public class PokemonGet {
     public void onWin() {
         CobblemonEvents.INSTANCE.BATTLE_VICTORY.subscribe(Priority.NORMAL, winevent -> {
             List<BattleActor> winners = winevent.getWinners();
+            System.out.println("Sending message to console...");
             Bukkit.getConsoleSender().sendMessage("winner: " + winners.get(0).getName());
             return 1;
         });
