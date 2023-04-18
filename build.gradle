@@ -58,7 +58,7 @@ repositories {
 dependencies {
 
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.4'
-    compileOnly 'curse.maven:cobblemon-687131:4443261'
+    compileOnly 'curse.maven:cobblemon-687131:4468321'
     compileOnly 'me.clip:placeholderapi:2.11.2'
     compileOnly 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT'
 
