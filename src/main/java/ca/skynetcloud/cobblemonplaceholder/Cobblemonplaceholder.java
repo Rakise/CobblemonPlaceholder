@@ -1,7 +1,7 @@
 package ca.skynetcloud.cobblemonplaceholder;
 
 import com.cobblemon.mod.common.Cobblemon;
-import ca.skynetcloud.cobblemonplaceholder.BattleVictoryEvent;
+import ca.skynetcloud.cobblemonplaceholder.VictoryEvent;
 import org.bukkit.Bukkit;
 import com.cobblemon.mod.common.api.pokemon.evolution.PreEvolution;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
