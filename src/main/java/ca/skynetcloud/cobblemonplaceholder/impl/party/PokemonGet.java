@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import com.cobblemon.mod.common.api.pokemon.evolution.PreEvolution;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
 import java.util.List;
 import com.cobblemon.mod.common.pokemon.evolution.CobblemonLazyPreEvolution;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
