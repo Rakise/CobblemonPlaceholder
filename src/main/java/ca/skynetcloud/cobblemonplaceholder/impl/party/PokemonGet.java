@@ -3,6 +3,8 @@ package ca.skynetcloud.cobblemonplaceholder.impl.PokemonGet;
 import com.cobblemon.mod.common.Cobblemon;
 import org.bukkit.Bukkit;
 import com.cobblemon.mod.common.api.pokemon.evolution.PreEvolution;
+import com.cobblemon.mod.common.api.events.CobblemonEvents;
+import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.pokemon.evolution.CobblemonLazyPreEvolution;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
@@ -19,7 +21,15 @@ import org.bukkit.entity.Player;
 import java.util.UUID;
 
 public class PokemonGet {
-
+    
+    public void onWin() {
+        CobblemonEvents.INSTANCE.getBATTLE_VICTORY().subscribe(Priority.NORMAL, winevent -> {
+            List<BattleActor> winners = winevent.getWinners();
+            List<BattleActor> losers = winevent.getLosers();
+            Bukkit.getConsoleSender().sendMessage("winner: " + winners.get(0).getName());
+        });
+    }
+    
     public static Species getPreEvo(Pokemon pokemon) {
         return pokemon.getPreEvolution().getSpecies();
     }
