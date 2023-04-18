@@ -21,12 +21,14 @@ public class VictoryEvent extends Event {
     }
 
     public String getWinners() {
-        UUID uuid = winners.get(0).getPlayerUUIDs();
-        OfflinePlayer player = Bukkit.getOfflinePlayer(uuid);
-        if (player.getName() == null) {
-            return "Unknown player";
+        Set<UUID> uuids = winners.get(0).getPlayerUUIDs();
+        for (UUID uuid : uuids) {
+            OfflinePlayer player = Bukkit.getOfflinePlayer(uuid);
+            if (player != null && player.getName() != null) {
+                return player.getName();
+            }
         }
-        return player.getName();
+        return "Unknown player";
     }
     
     @Override
