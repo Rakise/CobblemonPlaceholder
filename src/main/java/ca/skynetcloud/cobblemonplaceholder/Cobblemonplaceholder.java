@@ -7,6 +7,7 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
 import java.util.List;
+import org.bukkit.event.Event;
 import com.cobblemon.mod.common.pokemon.evolution.CobblemonLazyPreEvolution;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
@@ -29,11 +30,13 @@ public class Cobblemonplaceholder extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Bukkit.getPluginManager().registerEvents(new BattleVictoryEventListener(), this);
         System.out.println("teste");
         CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, winevent -> {
             List<BattleActor> winners = winevent.getWinners();
             System.out.println("Sending message to console...");
             Bukkit.getConsoleSender().sendMessage("winner: " + winners.get(0).getName());
+            Bukkit.getPluginManager().callEvent(new BattleVictoryEvent(winners));
             return null;
         });
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") == null) {
