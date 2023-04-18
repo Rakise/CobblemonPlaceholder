@@ -22,7 +22,7 @@ public class VictoryEvent extends Event {
     }
 
     public String getWinners() {
-        Set<UUID> uuids = winners.get(0).getPlayerUUIDs();
+        Iterable<UUID> uuids = winners.get(0).getPlayerUUIDs();
         for (UUID uuid : uuids) {
             OfflinePlayer player = Bukkit.getOfflinePlayer(uuid);
             if (player != null && player.getName() != null) {
