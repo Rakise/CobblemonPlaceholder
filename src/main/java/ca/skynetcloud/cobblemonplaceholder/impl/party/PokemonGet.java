@@ -8,6 +8,7 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.pokemon.evolution.CobblemonLazyPreEvolution;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
+import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.pokemon.FormData;
 import com.cobblemon.mod.common.command.argument.PokemonPropertiesArgumentType;
 import com.cobblemon.mod.common.pokemon.Species;
