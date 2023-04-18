@@ -7,7 +7,8 @@ import java.util.Collections;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 
 public class VictoryEvent extends Event {
-
+    
+    private static final HandlerList handlers = new HandlerList();
     private final List<BattleActor> winners;
 
     public VictoryEvent(List<BattleActor> winners) {
@@ -15,6 +16,16 @@ public class VictoryEvent extends Event {
     }
 
     public List<BattleActor> getWinners() {
-        return Collections.singletonList(winners.get(0));
+        return Collections.singletonList(winners.get(0).getName());
     }
+    
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
+
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
 }
