@@ -31,7 +31,6 @@ public class Cobblemonplaceholder extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getPluginManager().registerEvents(new BattleVictoryEventListener(), this);
         System.out.println("teste");
         CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, winevent -> {
             List<BattleActor> winners = winevent.getWinners();
