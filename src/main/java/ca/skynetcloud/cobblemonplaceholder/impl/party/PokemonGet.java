@@ -25,7 +25,7 @@ import java.util.UUID;
 public class PokemonGet {
     
     public void onWin() {
-        CobblemonEvents.INSTANCE.getBATTLE_VICTORY().subscribe(Priority.NORMAL, winevent -> {
+        CobblemonEvents.INSTANCE.getBattleVictory().subscribe(Priority.NORMAL, winevent -> {
             List<BattleActor> winners = winevent.getWinners();
             List<BattleActor> losers = winevent.getLosers();
             Bukkit.getConsoleSender().sendMessage("winner: " + winners.get(0).getName());
