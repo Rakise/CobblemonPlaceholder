@@ -29,7 +29,7 @@ public class Cobblemonplaceholder extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage("inicializando...");
+        System.out.println("teste");
         CobblemonEvents.INSTANCE.getBattleVictory().subscribe(Priority.NORMAL, winevent -> {
             List<BattleActor> winners = winevent.getWinners();
             System.out.println("Sending message to console...");
