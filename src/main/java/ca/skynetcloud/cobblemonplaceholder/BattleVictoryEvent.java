@@ -1,3 +1,6 @@
+package ca.skynetcloud.cobblemonplaceholder;
+
+import ca.skynetcloud.cobblemonplaceholder.Cobblemonplaceholder;
 import org.bukkit.event.Event;
 import java.util.List;
 
