@@ -6,8 +6,7 @@ import org.bukkit.event.Event;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import java.util.List;
 import java.util.ArrayList;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
+import net.minecraft.util.text.MutableText;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 
 public class VictoryEvent extends Event {
