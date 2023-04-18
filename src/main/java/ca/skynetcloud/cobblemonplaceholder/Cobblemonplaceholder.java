@@ -36,7 +36,7 @@ public class Cobblemonplaceholder extends JavaPlugin {
             List<BattleActor> winners = winevent.getWinners();
             System.out.println("Sending message to console...");
             Bukkit.getConsoleSender().sendMessage("winner: " + winners.get(0).getName());
-            Bukkit.getPluginManager().callEvent(new BattleVictoryEvent(winners));
+            Bukkit.getPluginManager().callEvent(new VictoryEvent(winners));
             return null;
         });
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") == null) {
