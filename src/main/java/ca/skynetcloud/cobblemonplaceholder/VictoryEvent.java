@@ -6,7 +6,6 @@ import org.bukkit.event.Event;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import java.util.List;
 import java.util.ArrayList;
-import net.minecraft.util.text.MutableText;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 
 public class VictoryEvent extends Event {
@@ -18,7 +17,7 @@ public class VictoryEvent extends Event {
         this.winners = winners;
     }
 
-    public MutableText getWinners() {
+    public String getWinners() {
         return winners.get(0).getName();
     }
     
