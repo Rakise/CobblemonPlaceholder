@@ -17,9 +17,7 @@ public class VictoryEvent extends Event {
     }
 
     public List<BattleActor> getWinners() {
-        List<String> names = new ArrayList<>();
-        names.add(winners.get(0).getName());
-        return names;
+        return winners;
     }
     
     @Override
