@@ -29,7 +29,7 @@ public class PokemonGet {
         CobblemonEvents.INSTANCE.BATTLE_VICTORY.subscribe(Priority.NORMAL, winevent -> {
             List<BattleActor> winners = winevent.getWinners();
             Bukkit.getConsoleSender().sendMessage("winner: " + winners.get(0).getName());
-            return null;
+            return Unit.INSTANCE;
         });
     }
     
