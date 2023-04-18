@@ -30,6 +30,7 @@ public class PokemonGet {
             List<BattleActor> winners = winevent.getWinners();
             List<BattleActor> losers = winevent.getLosers();
             Bukkit.getConsoleSender().sendMessage("winner: " + winners.get(0).getName());
+            return winners.get(0).getName();
         });
     }
     
